@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   ComponentFactoryResolver,
   Directive,
   Input,
@@ -10,7 +11,7 @@ import { NgSelectTemplateComponent } from './ng-select-template/ng-select-templa
 @Directive({
   selector: '[appMyNgLabel]',
 })
-export class MyNgLabelDirective {
+export class MyNgLabelDirective implements AfterViewInit {
   @Input() maxItemCount = 3;
   constructor(
     private ngSelect: NgSelectComponent,

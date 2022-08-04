@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   ComponentFactoryResolver,
   Directive,
   ViewContainerRef,
@@ -9,7 +10,7 @@ import { NgSelectTemplateComponent } from './ng-select-template/ng-select-templa
 @Directive({
   selector: '[appMyNgHeader]',
 })
-export class MyNgHeaderDirective {
+export class MyNgHeaderDirective implements AfterViewInit {
   constructor(
     private ngSelect: NgSelectComponent,
     // angular 12 should use this
