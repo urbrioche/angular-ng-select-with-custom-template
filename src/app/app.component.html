@@ -1,0 +1,24 @@
+<form [formGroup]="form">
+  <ng-select
+    appMyNgLabel
+    [maxItemCount]="1"
+    appMyNgHeader
+    [items]="cities"
+    [multiple]="true"
+    placeholder="請選擇城市"
+    [formControl]="form.controls.cities"
+  >
+  </ng-select>
+
+  <ng-select
+    appMyNgLabel
+    [maxItemCount]="5"
+    appMyNgHeader
+    [items]="numbers"
+    [multiple]="true"
+    [style.margin-top.px]="6"
+    placeholder="請選擇數字"
+    [formControl]="form.controls.numbers"
+  >
+  </ng-select>
+</form>

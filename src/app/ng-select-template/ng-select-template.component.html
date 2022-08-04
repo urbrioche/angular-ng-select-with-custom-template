@@ -1,0 +1,38 @@
+<!-- 
+  the idea is from the following url, not sure if is a good practice, or just sucks....
+https://stackoverflow.com/questions/57694454/creating-fetching-a-templateref-from-within-a-directive
+https://stackoverflow.com/questions/47371976/create-templateref-and-insert-it-in-components-template 
+-->
+<ng-template #labelTemplate>
+  <div
+    *ngIf="ngSelect.selectedValues.length < maxItemCount"
+    class="ng-values-list"
+    style="display: flex"
+  >
+    <div class="ng-value" *ngFor="let item of ngSelect.selectedItems">
+      <span class="ng-value-label">{{ item.label }}</span>
+      <span class="ng-value-icon right" (click)="ngSelect.clearItem(item.value)"
+        >×</span
+      >
+    </div>
+  </div>
+  <div
+    *ngIf="ngSelect.selectedValues.length >= maxItemCount"
+    class="ng-summary-list"
+  >
+    <div class="ng-value">
+      <span class="ng-value-label"
+        >{{ ngSelect.selectedValues.length }} Item(s) Selected</span
+      >
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #headerTemplate>
+  <button (click)="selectAll()" class="btn btn-sm btn-secondary">
+    Select all
+  </button>
+  <button (click)="unselect()" class="btn btn-sm btn-secondary">
+    Unselect all
+  </button>
+</ng-template>
