@@ -32,5 +32,7 @@ export class NgSelectTemplateComponent implements OnInit {
     this.ngSelect.itemsList.items.forEach((item) =>
       this.ngSelect.unselect(item)
     );
+
+    this.ngSelect.close();
   }
 }

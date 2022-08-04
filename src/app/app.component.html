@@ -9,6 +9,16 @@
     [formControl]="form.controls.cities"
   >
   </ng-select>
+  <!--validations -->
+  <ng-container
+    *ngIf="
+      form.controls.cities.dirty &&
+      form.controls.cities.invalid &&
+      form.controls.cities.errors
+    "
+  >
+    <div *ngIf="form.controls.cities.errors['required']">城市不可為空</div>
+  </ng-container>
 
   <ng-select
     appMyNgLabel

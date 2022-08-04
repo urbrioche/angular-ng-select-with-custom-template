@@ -1,5 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'my-app',
@@ -13,7 +13,10 @@ export class AppComponent {
 
   // angular 14 type control
   form = this.fb.group({
-    cities: this.fb.control(['Taipei']),
+    cities: this.fb.control([], {
+      validators: [Validators.required],
+      updateOn: 'blur',
+    }),
     numbers: this.fb.control(['1', '3', '5']),
   });
 
