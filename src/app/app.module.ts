@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { MyHeaderComponent } from './my-header/my-header.component';
 import { MyNgLabelDirective } from './my-ng-label.directive';
 import { NgSelectTemplateComponent } from './ng-select-template/ng-select-template.component';
 import { MyNgHeaderDirective } from './my-ng-header.directive';
@@ -15,7 +14,6 @@ import { MyNgHeaderDirective } from './my-ng-header.directive';
   declarations: [
     AppComponent,
     HelloComponent,
-    MyHeaderComponent,
     MyNgLabelDirective,
     MyNgHeaderDirective,
     NgSelectTemplateComponent,
