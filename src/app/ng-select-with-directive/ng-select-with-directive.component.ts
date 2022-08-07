@@ -24,4 +24,6 @@ export class NgSelectWithDirectiveComponent implements OnInit {
   ngOnInit() {
   }
 
+  
+
 }

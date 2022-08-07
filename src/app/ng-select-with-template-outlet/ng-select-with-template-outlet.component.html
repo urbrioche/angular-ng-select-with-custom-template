@@ -1,0 +1,107 @@
+<form [formGroup]="form">
+  <ng-select
+    #tNgSelect1
+    [items]="cities"
+    [multiple]="true"
+    placeholder="請選擇城市"
+    [formControl]="form.controls.cities"
+  >
+    <ng-template ng-multi-label-tmp>
+      <ng-container
+        *ngTemplateOutlet="
+          ngLabelTemplate;
+          context: {
+            $implicit: 'this is default prop',
+            ngSelect: tNgSelect1,
+            maxItemCount: 1
+          }
+        "
+      ></ng-container>
+    </ng-template>
+
+    <ng-template ng-header-tmp>
+      <ng-container
+        *ngTemplateOutlet="
+          ngHeaderTemplate;
+          context: {
+            $implicit: 'this is default prop',
+            ngSelect: tNgSelect1
+          }
+        "
+      ></ng-container>
+    </ng-template>
+  </ng-select>
+
+  <ng-select
+    #tNgSelect2
+    [items]="numbers"
+    [multiple]="true"
+    [style.margin-top.px]="6"
+    placeholder="請選擇數字"
+    [formControl]="form.controls.numbers"
+  >
+    <ng-template ng-multi-label-tmp>
+      <ng-container
+        *ngTemplateOutlet="
+          ngLabelTemplate;
+          context: {
+            $implicit: 'this is default prop',
+            ngSelect: tNgSelect2,
+            maxItemCount: 3
+          }
+        "
+      ></ng-container>
+    </ng-template>
+    <ng-template ng-header-tmp>
+      <ng-container
+        *ngTemplateOutlet="
+          ngHeaderTemplate;
+          context: {
+            $implicit: 'this is default prop',
+            ngSelect: tNgSelect2
+          }
+        "
+      ></ng-container>
+    </ng-template>
+  </ng-select>
+</form>
+
+<!--label template-->
+<ng-template
+  #ngLabelTemplate
+  let-ngSelect="ngSelect"
+  let-maxItemCount="maxItemCount"
+>
+  <div
+    *ngIf="ngSelect.selectedValues.length < maxItemCount"
+    class="ng-values-list"
+    style="display: flex"
+  >
+    <div class="ng-value" *ngFor="let item of ngSelect.selectedItems">
+      <span class="ng-value-label">{{ item.label }}</span>
+      <span class="ng-value-icon right" (click)="ngSelect.clearItem(item.value)"
+        >×</span
+      >
+    </div>
+  </div>
+  <div
+    *ngIf="ngSelect.selectedValues.length >= maxItemCount"
+    class="ng-summary-list"
+  >
+    <div class="ng-value">
+      <span class="ng-value-label"
+        >{{ ngSelect.selectedValues.length }} Item(s) Selected</span
+      >
+    </div>
+  </div>
+</ng-template>
+
+<!--header template-->
+<ng-template #ngHeaderTemplate let-ngSelect="ngSelect">
+  <button (click)="selectAll(ngSelect)" class="btn btn-sm btn-secondary">
+    Select all
+  </button>
+  <button (click)="unselect(ngSelect)" class="btn btn-sm btn-secondary">
+    Unselect all
+  </button>
+</ng-template>
