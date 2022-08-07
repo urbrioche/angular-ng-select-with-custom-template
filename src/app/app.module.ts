@@ -8,6 +8,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { MyNgLabelDirective } from './my-ng-label.directive';
 import { NgSelectTemplateComponent } from './ng-select-template/ng-select-template.component';
 import { MyNgHeaderDirective } from './my-ng-header.directive';
+import { NgSelectWithDirectiveComponent } from './ng-select-with-directive/ng-select-with-directive.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, NgSelectModule, ReactiveFormsModule],
@@ -17,6 +18,7 @@ import { MyNgHeaderDirective } from './my-ng-header.directive';
     MyNgLabelDirective,
     MyNgHeaderDirective,
     NgSelectTemplateComponent,
+    NgSelectWithDirectiveComponent,
   ],
   bootstrap: [AppComponent],
 })

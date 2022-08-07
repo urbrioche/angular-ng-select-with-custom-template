@@ -1,0 +1,34 @@
+<form [formGroup]="form">
+<ng-select
+  appMyNgLabel
+  [maxItemCount]="1"
+  appMyNgHeader
+  [items]="cities"
+  [multiple]="true"
+  placeholder="請選擇城市"
+  [formControl]="form.controls.cities"
+>
+</ng-select>
+<!--validations -->
+<ng-container
+  *ngIf="
+    form.controls.cities.dirty &&
+    form.controls.cities.invalid &&
+    form.controls.cities.errors
+  "
+>
+  <div *ngIf="form.controls.cities.errors['required']">城市不可為空</div>
+</ng-container>
+
+<ng-select
+  appMyNgLabel
+  [maxItemCount]="5"
+  appMyNgHeader
+  [items]="numbers"
+  [multiple]="true"
+  [style.margin-top.px]="6"
+  placeholder="請選擇數字"
+  [formControl]="form.controls.numbers"
+>
+</ng-select>
+</form>
