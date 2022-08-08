@@ -1,0 +1,42 @@
+<form [formGroup]="form">
+  <ng-select
+    #tNgSelect1
+    [items]="cities"
+    [multiple]="true"
+    placeholder="Please select"
+    [formControl]="form.controls.cities"
+  >
+    <ng-template ng-multi-label-tmp>
+      <app-ng-select-custom-label
+        [ngSelect]="tNgSelect1"
+        [maxItemCount]="2"
+      ></app-ng-select-custom-label>
+    </ng-template>
+    <ng-template ng-header-tmp>
+      <app-ng-select-custom-header
+        [ngSelect]="tNgSelect1"
+      ></app-ng-select-custom-header>
+    </ng-template>
+  </ng-select>
+
+  <ng-select
+    #tNgSelect2
+    [items]="numbers"
+    [multiple]="true"
+    [style.margin-top.px]="6"
+    placeholder="Please select"
+    [formControl]="form.controls.numbers"
+  >
+    <ng-template ng-multi-label-tmp>
+      <app-ng-select-custom-label
+        [ngSelect]="tNgSelect2"
+        [maxItemCount]="5"
+      ></app-ng-select-custom-label>
+    </ng-template>
+    <ng-template ng-header-tmp>
+      <app-ng-select-custom-header
+        [ngSelect]="tNgSelect2"
+      ></app-ng-select-custom-header>
+    </ng-template>
+  </ng-select>
+</form>

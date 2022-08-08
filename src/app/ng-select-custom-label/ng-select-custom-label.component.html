@@ -1,0 +1,22 @@
+<div
+  *ngIf="ngSelect.selectedValues.length < maxItemCount"
+  class="ng-values-list"
+  style="display: flex"
+>
+  <div class="ng-value" *ngFor="let item of ngSelect.selectedItems">
+    <span class="ng-value-label">{{ item.label }}</span>
+    <span class="ng-value-icon right" (click)="ngSelect.clearItem(item.value)"
+      >×</span
+    >
+  </div>
+</div>
+<div
+  *ngIf="ngSelect.selectedValues.length >= maxItemCount"
+  class="ng-summary-list"
+>
+  <div class="ng-value">
+    <span class="ng-value-label"
+      >{{ ngSelect.selectedValues.length }} Item(s) Selected</span
+    >
+  </div>
+</div>

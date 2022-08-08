@@ -11,6 +11,9 @@ import { MyNgHeaderDirective } from './my-ng-header.directive';
 import { NgSelectWithDirectiveComponent } from './ng-select-with-directive/ng-select-with-directive.component';
 import { NgSelectWithTemplateOutletComponent } from './ng-select-with-template-outlet/ng-select-with-template-outlet.component';
 import { CommonModule } from '@angular/common';
+import { NgSelectWithComponentComponent } from './ng-select-with-component/ng-select-with-component.component';
+import { NgSelectCustomLabelComponent } from './ng-select-custom-label/ng-select-custom-label.component';
+import { NgSelectCustomHeaderComponent } from './ng-select-custom-header/ng-select-custom-header.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, NgSelectModule, ReactiveFormsModule],
@@ -22,6 +25,9 @@ import { CommonModule } from '@angular/common';
     NgSelectTemplateComponent,
     NgSelectWithDirectiveComponent,
     NgSelectWithTemplateOutletComponent,
+    NgSelectWithComponentComponent,
+    NgSelectCustomLabelComponent,
+    NgSelectCustomHeaderComponent,
   ],
   bootstrap: [AppComponent],
 })
